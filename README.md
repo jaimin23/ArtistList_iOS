@@ -1,4 +1,4 @@
 # ArtistList_iOS
 Table which shows list of artists from a json file
-![Alt text](/ScreenShots/View1.png?raw=true "Initial View")
-![Alt text](/ScreenShots/View2.png?raw=true "2nd View")
+<img src="/ScreenShots/View1.png" width="300" height="500">
+<img src="/ScreenShots/View2.png" width="300" height="500">
