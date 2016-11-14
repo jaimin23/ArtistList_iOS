@@ -33,11 +33,14 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvZ-Xf-8Mf" id="tZj-Bl-H4M">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewo-Cg-8h0">
                                                     <rect key="frame" x="34" y="111" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="9es-eS-BQV"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -58,9 +61,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XAS-BE-AqK" secondAttribute="bottom" constant="97" id="9ot-WE-HM8"/>
                                                 <constraint firstItem="cVn-Wy-Cl8" firstAttribute="top" secondItem="XAS-BE-AqK" secondAttribute="top" id="Djt-aW-EAp"/>
+                                                <constraint firstItem="Ewo-Cg-8h0" firstAttribute="top" secondItem="cVn-Wy-Cl8" secondAttribute="bottom" constant="8" id="Eba-et-jQz"/>
                                                 <constraint firstItem="Ewo-Cg-8h0" firstAttribute="leading" secondItem="tZj-Bl-H4M" secondAttribute="leadingMargin" constant="26" id="LQQ-Ke-1Ho"/>
                                                 <constraint firstItem="Ewo-Cg-8h0" firstAttribute="top" secondItem="cVn-Wy-Cl8" secondAttribute="bottom" constant="8" symbolic="YES" id="Yjk-Dr-dVK"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Ewo-Cg-8h0" secondAttribute="bottom" priority="250" constant="-1" id="bpb-r4-n95"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ewo-Cg-8h0" secondAttribute="bottom" constant="7" id="jbi-Tw-TYn"/>
                                                 <constraint firstItem="cVn-Wy-Cl8" firstAttribute="width" secondItem="tZj-Bl-H4M" secondAttribute="width" multiplier="0.5" constant="-53.5" id="kmb-8X-Da6"/>
                                                 <constraint firstItem="XAS-BE-AqK" firstAttribute="top" secondItem="tZj-Bl-H4M" secondAttribute="topMargin" id="nCV-bc-hLn"/>
                                                 <constraint firstItem="XAS-BE-AqK" firstAttribute="trailing" secondItem="tZj-Bl-H4M" secondAttribute="trailingMargin" id="qLp-nM-KKz"/>
@@ -68,9 +73,6 @@
                                                 <constraint firstItem="cVn-Wy-Cl8" firstAttribute="leading" secondItem="tZj-Bl-H4M" secondAttribute="leadingMargin" id="xWM-zM-1m8"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Ewo-Cg-8h0" secondAttribute="bottom" constant="8" id="ab9-64-QEC"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="artistImageView" destination="cVn-Wy-Cl8" id="53p-f9-zAG"/>
                                             <outlet property="bioLabel" destination="XAS-BE-AqK" id="Cpy-RE-lIo"/>
