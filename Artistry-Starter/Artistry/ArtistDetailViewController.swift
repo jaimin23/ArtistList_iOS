@@ -53,9 +53,22 @@ extension ArtistDetailViewController: UITableViewDataSource {
     cell.workTitleLabel.textAlignment = .center
     cell.moreInfoTextView.textColor = UIColor(white: 144/255, alpha: 1)
     cell.selectionStyle = .none
-    
+    cell.moreInfoTextView.text = work.isExpanded ? work.info : moreInfoText
+    cell.moreInfoTextView.textAlignment = work.isExpanded ? .left : .center
     return cell
   }
 }
-
+extension ArtistDetailViewController: UITableViewDelegate{
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) as? WorkTableViewCell else{return}
+    var work = selectedArtist.works[indexPath.row]
+    work.isExpanded = !work.isExpanded
+    selectedArtist.works[indexPath.row] = work
+    cell.moreInfoTextView.text = work.isExpanded ? work.info : moreInfoText
+    cell.moreInfoTextView.textAlignment = work.isExpanded ? .left : .center
+    tableView.beginUpdates()
+    tableView.endUpdates()
+    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+  }
+}
 
