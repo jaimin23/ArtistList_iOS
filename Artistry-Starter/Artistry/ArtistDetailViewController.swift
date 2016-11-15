@@ -36,6 +36,11 @@ class ArtistDetailViewController: UIViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 300
   }
+  override func viewDidAppear(_ animated:Bool){
+    super.viewDidAppear(animated)
+    NotificationCenter.default.addObserver(forName:.UIContentSizeCategoryDidChange, object:.none, queue:OperationQueue.main){[weak self]_  in self?.tableView.reloadData()
+    }
+  }
 }
 
 extension ArtistDetailViewController: UITableViewDataSource {
@@ -55,6 +60,10 @@ extension ArtistDetailViewController: UITableViewDataSource {
     cell.selectionStyle = .none
     cell.moreInfoTextView.text = work.isExpanded ? work.info : moreInfoText
     cell.moreInfoTextView.textAlignment = work.isExpanded ? .left : .center
+    
+    cell.workTitleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+    cell.moreInfoTextView.font = UIFont.preferredFont(forTextStyle: .footnote)
+
     return cell
   }
 }

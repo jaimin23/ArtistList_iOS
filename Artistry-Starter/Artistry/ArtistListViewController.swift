@@ -33,7 +33,11 @@ class ArtistListViewController: UIViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 140
   }
-  
+ override func viewDidAppear(_ animated:Bool){
+  super.viewDidAppear(animated)
+  NotificationCenter.default.addObserver(forName:.UIContentSizeCategoryDidChange, object:.none, queue:OperationQueue.main){[weak self]_  in self?.tableView.reloadData()
+    }
+  }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? ArtistDetailViewController,
         let indexPath = tableView.indexPathForSelectedRow {
@@ -59,6 +63,9 @@ extension ArtistListViewController: UITableViewDataSource {
     cell.nameLabel.textColor = UIColor.white
     cell.nameLabel.textAlignment = .center
     cell.selectionStyle = .none
+    
+    cell.nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+    cell.bioLabel.font = UIFont.preferredFont(forTextStyle: .body)
     return cell
   }
 }
