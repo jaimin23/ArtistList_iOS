@@ -127,7 +127,44 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PvN-Eb-qO8" id="MJV-73-Ltb">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c75-wM-S4c">
+                                                    <rect key="frame" x="16" y="8" width="351" height="113"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" text="Select More Info" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P5P-dN-SBs">
+                                                    <rect key="frame" x="16" y="158" width="351" height="33"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPc-Bj-Xh2">
+                                                    <rect key="frame" x="16" y="129" width="351" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c75-wM-S4c" firstAttribute="top" secondItem="MJV-73-Ltb" secondAttribute="topMargin" id="19r-tK-tOP"/>
+                                                <constraint firstItem="c75-wM-S4c" firstAttribute="leading" secondItem="MJV-73-Ltb" secondAttribute="leadingMargin" constant="8" id="5lm-xp-6MM"/>
+                                                <constraint firstItem="P5P-dN-SBs" firstAttribute="bottom" secondItem="MJV-73-Ltb" secondAttribute="bottomMargin" id="BKH-ne-sJ1"/>
+                                                <constraint firstItem="IPc-Bj-Xh2" firstAttribute="width" secondItem="c75-wM-S4c" secondAttribute="width" id="D12-m8-oLr"/>
+                                                <constraint firstItem="P5P-dN-SBs" firstAttribute="leading" secondItem="MJV-73-Ltb" secondAttribute="leadingMargin" constant="8" id="GhZ-hj-Mxz"/>
+                                                <constraint firstItem="c75-wM-S4c" firstAttribute="centerX" secondItem="P5P-dN-SBs" secondAttribute="centerX" id="HVi-Kx-8Cu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="c75-wM-S4c" secondAttribute="trailing" constant="8" id="KeC-gx-dTn"/>
+                                                <constraint firstItem="IPc-Bj-Xh2" firstAttribute="leading" secondItem="MJV-73-Ltb" secondAttribute="leading" constant="16" id="LUq-IW-tUE"/>
+                                                <constraint firstItem="IPc-Bj-Xh2" firstAttribute="top" secondItem="c75-wM-S4c" secondAttribute="bottom" constant="8" id="Ohw-lN-vmC"/>
+                                                <constraint firstItem="P5P-dN-SBs" firstAttribute="top" secondItem="IPc-Bj-Xh2" secondAttribute="bottom" constant="8" id="Uiz-AR-Olc"/>
+                                                <constraint firstItem="c75-wM-S4c" firstAttribute="top" secondItem="MJV-73-Ltb" secondAttribute="topMargin" id="i9v-b0-FO8"/>
+                                                <constraint firstItem="IPc-Bj-Xh2" firstAttribute="top" secondItem="c75-wM-S4c" secondAttribute="bottom" constant="8" symbolic="YES" id="po5-HT-xLu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="P5P-dN-SBs" secondAttribute="trailing" constant="8" id="uFp-BX-TUH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moreInfoTextView" destination="P5P-dN-SBs" id="5Qd-D3-kuZ"/>
+                                            <outlet property="workImageView" destination="c75-wM-S4c" id="Jaq-zw-qju"/>
+                                            <outlet property="workTitleLabel" destination="IPc-Bj-Xh2" id="mIH-GC-mbn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -150,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpQ-1Q-2wR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="356"/>
+            <point key="canvasLocation" x="1912.8" y="355.7721139430285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uKO-y6-OrC">

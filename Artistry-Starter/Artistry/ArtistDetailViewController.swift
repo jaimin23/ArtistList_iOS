@@ -33,6 +33,8 @@ class ArtistDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = selectedArtist.name
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 300
   }
 }
 
@@ -42,10 +44,15 @@ extension ArtistDetailViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WorkTableViewCell
     let work = selectedArtist.works[indexPath.row]
-    cell.textLabel?.text = work.info
+    cell.workTitleLabel.text = work.title
+    cell.workImageView.image = work.image
+    
+    cell.workTitleLabel.backgroundColor = UIColor(white: 204/255, alpha: 1)
+    cell.workTitleLabel.textAlignment = .center
+    cell.moreInfoTextView.textColor = UIColor(white: 144/255, alpha: 1)
+    cell.selectionStyle = .none
     
     return cell
   }
